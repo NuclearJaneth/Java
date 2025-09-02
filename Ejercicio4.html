@@ -6,6 +6,23 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Ejercicio 4 Mayor de dos numeros</h1>
+    <script>
+        function mayor(num1,num2)
+        {
+            if(num1>num2)
+            {
+                return num1;
+            }
+            else
+            {
+                return num2;
+            }
+        }
+        document.write(mayor(5,10));
+        const mayorFlecha=(num1,num2)=>(num1>num2)?num1 : num2;
+        document.write("<br>");
+        document.write(mayorFlecha(5,10));
+    </script>
 </body>
 </html>
