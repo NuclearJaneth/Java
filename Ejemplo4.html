@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo 4</h1>
+    <h2 id="title">My web page</h2>
+    <p class="text">This is a paragraph.</p>
+    <p class="text">This is another paragraph</p>
+    <button id="changeContent">Change Content</button>
+    <button id="highlightText">Highlight Text</button>
+
+    <script>
+        //Cambiar el contenido del titulo
+        document.getElementById('changeContent').addEventListener('click',() => {
+            document.getElementById('title').textContent = 'Content Changed!';
+        });
+
+        // Resaltar todos los parrafos
+        document.getElementById('highlightText').addEventListener('click',() => {
+            const paragraph = document.querySelectorAll('.text');
+            paragraph.forEach(p => {
+                p.classList.toggle('highlight');
+            });
+        });
+    </script>
+</body>
+</html>
