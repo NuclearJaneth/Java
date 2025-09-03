@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 7</title>
+</head>
+<body>
+    <script>
+        function aplicarOperacionAArray(arr,operacion)
+        {
+            return arr.map(operacion);
+        }
+        const duplicar =(x)=>x*2;
+        const numeros=[1,2,3,4];
+        document.write(aplicarOperacionAArray(numeros,duplicar));
+        document.write('<br>');
+        const dividir =(x)=>x/2;
+        const numeros1=[3,6,9,12];
+        document.write(aplicarOperacionAArray(numeros1,dividir));
+    </script>
+</body>
+</html>
