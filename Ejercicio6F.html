@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function ejecutarOperacion(a,b,operacion){
+            return operacion(a,b);
+        }
+        const sumar = (a,b)=>a+b;
+        const multiplicar =(a,b)=>a*b;
+        const dividir =(a,b)=> a/b;
+        const potencia=(base,exponente)=>Math.pow(base,exponente);
+        document.write(ejecutarOperacion(5,3,sumar));
+        document.write('<br>');
+        document.write(ejecutarOperacion(5,3,multiplicar));
+        document.write('<br>');
+        document.write(ejecutarOperacion(6,3,dividir));
+        document.write('<br>');
+        document.write(ejecutarOperacion(5,3,potencia));
+    </script>
+</body>
+</html>

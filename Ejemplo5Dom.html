@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body>
+    <h1 id="miEnc">Ejemplo 5</h1>
+    <button id="changeText">Change Text</button>
+    <button id="changeStyle">Change Style</button>
+    <h2>Ingredientes para pollo en crema de chipotle</h2>
+    <ul id="miLis">
+        <li>Filete de pollo</li>
+        <li>Chipotle</li>
+        <li>Crema</li>
+        <li>Queso motzarella</li>
+    </ul>
+    <script>
+        const miEnc = document.getElementById('miEnc');
+        
+        //Cambiar el texto del elemento
+        document.getElementById('changeText').addEventListener('click',() => {
+            miEnc.textContent = 'Ejemplo Personal';
+        });
+
+        //Cambiar el estilo del elemento
+        document.getElementById('changeStyle').addEventListener('click',() => {
+            miEnc.style.color = 'pink';
+            miEnc.style.fontSize = '50px';
+        });
+        const listItems = document.querySelectorAll('#miLis li');
+
+            listItems.forEach(item => {
+            item.addEventListener('mouseover', () => {
+            item.style.backgroundColor = 'pink';
+        });
+
+            item.addEventListener('mouseout', () => {
+            item.style.backgroundColor = '';
+        });
+});
+    </script>
+</body>
+</html>
