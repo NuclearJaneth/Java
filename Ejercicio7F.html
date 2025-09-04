@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+<body>
+    <script>
+    function crearContador() {
+        let contador = 0;
+        return function() {
+            contador +=1;
+            return contador;
+        };
+    }
+    const contador =crearContador(); //Crea una intancia que permitira acceder a la funcion
+    document.write(contador());//1
+    document.write(contador());//2
+    document.write(contador());//3
+    </script>
+</body>
+</html>

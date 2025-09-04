@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+    function crearGeneradorNumeroAleatorio(min, max) {
+        return function() {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        };
+    }
+
+    function crearJuegoAdivinarNumero(generadorNumero) {
+        const numeroAleatorio = generadorNumero();
+        let intentos = 0;
+        
+        return function(adivina) {
+            intentos += 1;
+            
+            if (adivina < numeroAleatorio) {
+                return `El número es mayor. Intentos: ${intentos}`;
+            } else if (adivina > numeroAleatorio) {
+                return `El número es menor. Intentos: ${intentos}`;
+            } else {
+                return `¡Felicidades! Adivinaste el número en ${intentos} intentos.`;
+            }
+        };
+    }
+
+    function iniciarJuego() {
+        const rangoMin = parseInt(prompt("Ingrese el valor mínimo del rango:"));
+        const rangoMax = parseInt(prompt("Ingrese el valor máximo del rango:"));
+        const generadorNumero = crearGeneradorNumeroAleatorio(rangoMin, rangoMax);
+        let juego = crearJuegoAdivinarNumero(generadorNumero);
+        let resultado;
+        
+        do {
+            const adivina = parseInt(prompt("Adivina el número:"));
+            
+            // Validar la adivinanza
+            if (isNaN(adivina)) {
+                alert("Por favor, ingrese un número válido.");
+                continue;
+            }
+            
+            resultado = juego(adivina);
+            alert(resultado);
+            
+        } while (!resultado.includes("¡Felicidades!"));
+        
+        if (confirm("¿Quieres jugar de nuevo?")) {
+            iniciarJuego();
+        }
+    }
+
+    // Inicia el juego por primera vez
+    iniciarJuego();
+</script>
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+<body>
+    <script>
+        //creacion del saludo
+        function crearSaludo(saludo){
+            return function(nombre){
+                return `${saludo},${nombre}!`;
+            };
+        }
+        //creacion de funciones saludo
+        const saludarEnEspanol = crearSaludo('Hola');
+        const saludarEnIngles = crearSaludo('Hello');
+        //Pruebas
+        document.write(saludarEnEspanol('Janeth'));
+        document.write("<br>"); 
+        document.write(saludarEnIngles('Janeth'));
+        function crearDespedida(despedida){
+            return function(nombre){
+                return `${despedida},${nombre}!`;
+            };
+        }
+         const despedida1 = crearDespedida('Nos vemos el lunes');
+         document.write("<br>"); 
+         document.write(despedida1(' Janeth'));
+    </script>
+</body>
+</html>
