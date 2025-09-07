@@ -15,6 +15,12 @@
         document.write("Numeros del arreglo: " + numeros);
         document.write("<br>");
         document.write("Numeros duplicados del arreglo: " + numerosDuplicados);
+        document.write("<h2>Metodo filter</h2>")
+        const numerosFiltrados = numeros.filter(num => num > 2);
+        document.write("Numeros filtrados: " + numerosFiltrados);
+        document.write("<h2>Metodo reduce</h2>")
+        const suma = numeros.reduce((total,num)=> total + num, 0);
+        document.write("Numeros reducidos: " + suma);
     </script>
 </body>
 </html>
