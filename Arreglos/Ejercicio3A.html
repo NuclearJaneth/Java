@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <h1>Encontrar el mayor numero</h1>
+    <script>
+        function encontrarMayor(arr) 
+        {
+            return arr.reduce((max, num) => (num > max ? num : max), arr[0]);
+        }
+        const numeros = [10, 5, 8, 20, 15];
+        document.write(numeros);
+        document.write("<br>");
+        document.write("El numero mayor del arreglo es: " + encontrarMayor(numeros)); 
+    </script>
+</body>
+</html>

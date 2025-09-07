@@ -6,6 +6,99 @@
     <title>Ejercicio Personal</title>
 </head>
 <body>
-    
+    <div class="container">
+        <h1>🔄 Contador Interactivo</h1>
+        
+        <div>
+            <button onclick="contador1.incrementar()">➕ Contador 1</button>
+            <button onclick="contador1.decrementar()">➖ Contador 1</button>
+        </div>
+        
+        <div>
+            <button onclick="contador2.incrementar()">➕ Contador 2</button>
+            <button onclick="contador2.decrementar()">➖ Contador 2</button>
+        </div>
+        
+        <div>
+            <button onclick="operarAmbos('incrementar')">➕ Ambos Contadores</button>
+            <button onclick="operarAmbos('decrementar')">➖ Ambos Contadores</button>
+            <button onclick="resetearAmbos()">🔄 Resetear Ambos</button>
+        </div>
+        
+        <div class="resultado">
+            <h3>Valores Actuales:</h3>
+            <p id="valores"></p>
+            <p id="total"></p>
+        </div>
+    </div>
+
+    <script>
+        // Función de orden superior que crea un closure
+        function crearContador(nombre) {
+            let valor = 0;
+            
+            // Retornamos un objeto con funciones (closure)
+            return {
+                incrementar: function() {
+                    valor++;
+                    actualizarUI();
+                    console.log(`${nombre} incrementado: ${valor}`);
+                },
+                
+                decrementar: function() {
+                    valor--;
+                    actualizarUI();
+                    console.log(`${nombre} decrementado: ${valor}`);
+                },
+                
+                reset: function() {
+                    valor = 0;
+                    actualizarUI();
+                    console.log(`${nombre} resetado a 0`);
+                },
+                
+                obtenerValor: function() {
+                    return valor;
+                }
+            };
+        }
+
+        // Función de orden superior que opera sobre múltiples contadores
+        function operarContadores(contadores, operacion) {
+            contadores.forEach(contador => {
+                if (contador[operacion]) {
+                    contador[operacion]();
+                }
+            });
+        }
+
+        // Crear contadores
+        const contador1 = crearContador("Contador 1");
+        const contador2 = crearContador("Contador 2");
+
+        // Función para actualizar la interfaz
+        function actualizarUI() {
+            document.getElementById('valores').innerHTML = `
+                <strong>Contador 1:</strong> ${contador1.obtenerValor()} <br>
+                <strong>Contador 2:</strong> ${contador2.obtenerValor()}
+            `;
+            
+            document.getElementById('total').innerHTML = `
+                <strong>Total:</strong> ${contador1.obtenerValor() + contador2.obtenerValor()}
+            `;
+        }
+
+        // Funciones para los botones
+        function operarAmbos(operacion) {
+            operarContadores([contador1, contador2], operacion);
+        }
+
+        function resetearAmbos() {
+            operarContadores([contador1, contador2], 'reset');
+        }
+
+        // Inicializar la interfaz
+        actualizarUI();
+    </script>
 </body>
 </html>
