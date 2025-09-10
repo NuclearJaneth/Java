@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Función Básica para Objetos</h2>
+    
+     <script>
+        // La función 
+        function modificar(obj, prop, valor) {
+            obj[prop] = valor; // Asigna o cambia el valor
+            return obj;
+        }
+        
+        // Objeto de ejemplo
+        let animal = {tipo: "perro", edad: 2};
+        
+        document.write("Original: " + JSON.stringify(animal) + "<br>");
+        
+        // Cambiar edad
+        modificar(animal, "edad", 3);
+        document.write("Cambiar edad: " + JSON.stringify(animal) + "<br>");
+        
+        // Agregar nueva propiedad
+        modificar(animal, "color", "marrón");
+        document.write("Agregar color: " + JSON.stringify(animal));
+    </script>
+</body>
+</html>
