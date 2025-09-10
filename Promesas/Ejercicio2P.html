@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h2>Nombre y Edad</h2>
+    <script>
+        //Definimos una funcion que simula una operacion asincrona
+        function obtenerDatos(callback) {
+            setTimeout(() => {
+                const datos = {nombre: "Janeth", edad: 30};
+                //Llamamos al callback con los datos obtenidos
+                callback(datos);
+            }, 2000); //Simulamos un retraso de 2 segundos
+        }
+        //Definamos un callback que maneja datos
+    </script>
+</body>
+</html>

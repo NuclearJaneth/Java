@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <h1>Ejemplos de callbacks</h1>
+
+    <h2>Suma de 2 numeros</h2>
+    <script>
+        //Definimos una funcion que realiza la suma
+        function sumar(a,b, callback) {
+            const resultado = a + b; //Realiza la suma
+            callback(resultado); //LLama al callback con el resultado
+        }
+        //Definimos un callback que maneja el resultado 
+        function mostrarResultado(resultado) {
+            document.write("La suma es:", resultado);
+        }
+        //Llamamaos a la funcion sumar y pasamos los numeros y el callback
+        sumar(5, 10, mostrarResultado);
+    </script>
+</body>
+</html>
