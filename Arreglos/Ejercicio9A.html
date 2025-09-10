@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+</head>
+<body>
+    <h1>Agrupacion por propiedad</h1>
+    <script>
+        function agruparPorCategoria(arr) {
+            return arr.reduce((grupo, producto) => {
+                const categoria = producto.categoria;
+                if (!grupo[categoria]) {
+                    grupo[categoria] = [];
+                }
+                grupo[categoria].push(producto);
+                return grupo;
+            }, {});
+        }
+        
+        const productos = [
+            {nombre: "camiseta", categoria: "ropa"}, 
+            {nombre: "pantalon", categoria: "ropa"}, 
+            {nombre: "zapatos", categoria: "calzado"},
+            {nombre: "sandalias", categoria: "calzado"}
+        ];
+        
+        document.write(JSON.stringify(agruparPorCategoria(productos)));
+    </script>
+</body>
+</html>

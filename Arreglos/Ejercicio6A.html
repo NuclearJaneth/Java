@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Corregido</title>
+</head>
+<body>
+    <h1>Contar propiedades de un objeto</h1>
+    <script>
+        function contarPropiedades(obj){
+            return Object.keys(obj).length;
+        }
+        const coche = {marca: "Toyota", modelo: "Corolla", year: 2020}; 
+        document.write(contarPropiedades(coche));
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+</head>
+<body>
+    <h1>Filtrado de Arreglos de objetos</h1>
+    <script>
+        const usuarios = [
+            {nombre: "Ana", edad: 25}, 
+            {nombre: "Luis", edad: 30}, 
+            {nombre: "Maria", edad: 28}
+        ];
+        
+        function filtrarUsuarios(arr) {
+            return arr.filter(usuario => usuario.edad > 27);
+        }
+        
+        document.write(JSON.stringify(filtrarUsuarios(usuarios)));
+    </script>
+</body>
+</html>
