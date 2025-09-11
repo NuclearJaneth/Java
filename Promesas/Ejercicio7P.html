@@ -26,7 +26,7 @@
 
             function mostrarPosts(posts) {
                 const postsUl = document.getElementById('posts');
-                post.forEach(post => {
+                posts.forEach(post => {
                     const li = document.createElement('li');
                     li.textContent = post.title;
                     postsUl.appendChild(li);
