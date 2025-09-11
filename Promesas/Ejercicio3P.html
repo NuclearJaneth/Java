@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <h1>Manejo de promesas</h1>
+    <script>
+        //Crear una nueva promesa 
+        const miPromesa = new Promise((resolve, reject) => {
+            //Simular una operacion asincronica (por ejemplo, una solicitud de red)
+            const exito = true; //Cambia a false para simular un error
+
+            if (exito) {
+                resolve("Operacion exitosa!"); // Se resuelve la promesa
+            } else {
+                reject("Ocurrio un error."); //Se rechaza la promesa
+            }
+        });
+
+        // Usar la promesa
+        miPromesa
+            .then((resultado)=> {
+                document.write(resultado); //Manejar el resultado si la promesa resuelve 
+            })
+            .catch((error)=> {
+                console.error(error); //Manejar el error si la promesa se rechaza
+            })
+    </script>
+</body>
+</html>

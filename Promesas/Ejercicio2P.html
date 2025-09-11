@@ -17,6 +17,11 @@
             }, 2000); //Simulamos un retraso de 2 segundos
         }
         //Definamos un callback que maneja datos
+        function mostrarDatos(datos) {
+            document.write(`Nombre: ${datos.nombre}, Edad: ${datos.edad}`);
+        }
+        //Llamamos la funcion obtenerDatos y pasamos como callback
+        obtenerDatos(mostrarDatos);
     </script>
 </body>
 </html>
